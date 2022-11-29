@@ -6,8 +6,7 @@ def substrings(phrase, dictionary)
   match = false
   for i in 0..phrase_array.length-1
     for j in 0..dictionary.length-1
-      match = phrase_array[i].include?(dictionary[j])
-      if match == true
+      if phrase_array[i].include?(dictionary[j])
         if matched_words.key?(dictionary[j])
           matched_words[dictionary[j]] = matched_words.fetch(dictionary[j]) + 1
         else
