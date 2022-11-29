@@ -3,7 +3,6 @@ dictionary = ["below","down","go","going","horn","how","howdy","it","i","low","o
 def substrings(phrase, dictionary)
   matched_words = {}
   phrase_array = phrase.split
-  match = false
   for i in 0..phrase_array.length-1
     for j in 0..dictionary.length-1
       if phrase_array[i].include?(dictionary[j])
