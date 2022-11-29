@@ -6,36 +6,20 @@ def substrings(phrase, dictionary)
   match = false
   for i in 0..phrase_array.length-1
     for j in 0..dictionary.length-1
-      match = word_check?(phrase_array[i], dictionary[j])
+      match = phrase_array[i].include?(dictionary[j])
       if match == true
         if matched_words.key?(dictionary[j])
           matched_words[dictionary[j]] = matched_words.fetch(dictionary[j]) + 1
         else
           matched_words[dictionary[j]] = 1
         end
-        puts "Testing: #{dictionary[j]} against #{phrase_array[i]}"
-        puts "Result: #{matched_words}"
       end
     end
   end
   puts matched_words
 end
 
-def word_check?(phrase_word, dictionary_word)
-  match = false
-  for i in 0..dictionary_word.length-1
-    if phrase_word[i] != dictionary_word[i]
-      match = false
-      break
-    else
-      match = true
-    end
-  end
-
-  return match
-end
-
-substrings("below low going test go low", dictionary)
+substrings("Howdy partner, sit down! How's it going?", dictionary)
 
 #the PLAN
 #input phrase
